@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Nicolas Joué. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} Perrine Quennehen. Tous droits réservés.</p>
       </div>
     </footer>
   );
