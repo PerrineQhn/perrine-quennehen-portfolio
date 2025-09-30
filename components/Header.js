@@ -1,100 +1,135 @@
-'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter();
+  const { pathname } = router;
 
-  const navItems = [
-    { name: 'Accueil', path: '/' },
-    { name: 'À Propos', path: '/about' },
-    { name: 'Projets', path: '/projects' },
-    { name: 'Expérience', path: '/experience' },
-    { name: 'Contact', path: '/contact' },
-  ]
+  const isActive = (route) => {
+    if (route === "/projets" && pathname.startsWith("/projets/")) {
+      return true;
+    }
+    return route === pathname;
+  };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
-      <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg transition-transform group-hover:scale-110">
-              PQ
+    <header>
+      <div className="header-left">
+        <Image
+          src="/photo.png"
+          alt="Photo de profil de Perrine Quennehen"
+          width={130}
+          height={130}
+          className="profile-pic"
+          priority
+        />
+        <div className="header-info">
+          <div className="header-top-row">
+            <div className="header-title-container">
+              <h1>Nicolas Joué</h1>
+              <p className="header-subtitle">Ingénieur en IA & Data Science</p>
             </div>
-            <span className="hidden sm:block font-semibold text-gray-900">Perrine Q.</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-all"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <Link href="/contact" className="job-status-badge">
+              <span className="glowing-dot"></span>
+              Disponible pour un CDI - Oct. 2025
+            </Link>
           </div>
 
-          {/* CTA Button Desktop */}
-          <a
-            href="/cv/CV_Perrine_Quennehen.pdf"
-            download
-            className="hidden md:flex items-center space-x-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all hover:shadow-lg font-medium"
-          >
-            <FiDownload size={18} />
-            <span>CV</span>
-          </a>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-200 bg-white"
-          >
-            <div className="container-custom py-4 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
-                >
-                  {item.name}
+          <nav>
+            <ul className="nav-list">
+              <li>
+                <Link href="/" className={isActive("/") ? "active" : ""}>
+                  Accueil
                 </Link>
-              ))}
-              <a
-                href="/cv/CV_Perrine_Quennehen.pdf"
-                download
-                className="flex items-center justify-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium mt-2"
-              >
-                <FiDownload size={18} />
-                <span>Télécharger CV</span>
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </li>
+              <li>
+                <Link
+                  href="/career"
+                  className={isActive("/career") ? "active" : ""}
+                >
+                  Parcours
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects"
+                  className={isActive("/projects") ? "active" : ""}
+                >
+                  Projets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/skills"
+                  className={isActive("/skills") ? "active" : ""}
+                >
+                  Compétences
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className={isActive("/contact") ? "active" : ""}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div className="header-right">
+        <a
+          href="/CV - Perrine Quennehen.pdf"
+          download="CV_Perrine_Quennehen.pdf"
+          className="cv-button"
+          title="Télécharger mon CV"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span>CV</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/perrine-quennehen"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Mon profil LinkedIn"
+        >
+          <Image
+            src="/LI-In-Bug.png"
+            alt="LinkedIn"
+            width={30}
+            height={30}
+            className="icon"
+          />
+        </a>
+        <a
+          href="https://github.com/PerrineQhn"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Mes projets sur GitHub"
+        >
+          <Image
+            src="/github-mark.png"
+            alt="GitHub"
+            width={30}
+            height={30}
+            className="icon"
+          />
+        </a>
+      </div>
     </header>
-  )
+  );
 }

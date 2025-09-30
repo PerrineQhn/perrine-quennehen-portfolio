@@ -1,110 +1,58 @@
-'use client'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FiMail, FiUser, FiMessageSquare, FiSend } from 'react-icons/fi'
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
+const ContactForm = () => {
+  const form = useRef();
+  const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus("Envoi en cours...");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Créer un mailto link avec les données du formulaire
-    const mailtoLink = `mailto:perrine.quennehen@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-    window.location.href = mailtoLink
-  }
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("Message envoyé avec succès !");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          setStatus("Erreur lors de l'envoi. Veuillez réessayer.");
+        }
+      );
+  };
 
   return (
-    <motion.form
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      onSubmit={handleSubmit}
-      className="card max-w-2xl mx-auto"
-    >
-      <h2 className="text-3xl font-bold mb-6">Envoyez-moi un message</h2>
-
-      {/* Name */}
-      <div className="mb-4">
-        <label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
-          <FiUser /> Nom
-        </label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="Votre nom"
-        />
-      </div>
-
-      {/* Email */}
-      <div className="mb-4">
-        <label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
-          <FiMail /> Email
-        </label>
+    <div className="form-wrapper">
+      <h3>Envoyer un message rapide</h3>
+      <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <input type="text" name="user_name" placeholder="Votre Nom" required />
         <input
           type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
+          name="user_email"
+          placeholder="Votre Email"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="votre.email@exemple.com"
         />
-      </div>
-
-      {/* Subject */}
-      <div className="mb-4">
-        <label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
-          <FiMessageSquare /> Sujet
-        </label>
-        <input
-          type="text"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="Opportunité de CDI, Collaboration..."
-        />
-      </div>
-
-      {/* Message */}
-      <div className="mb-6">
-        <label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
-          <FiMessageSquare /> Message
-        </label>
         <textarea
           name="message"
-          value={formData.message}
-          onChange={handleChange}
+          placeholder="Votre Message"
+          rows="4"
           required
-          rows="6"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-          placeholder="Votre message..."
         ></textarea>
-      </div>
+        <button type="submit" className="submit-button">
+          Envoyer le message
+        </button>
+      </form>
+      {status && <p className="form-status">{status}</p>}
+    </div>
+  );
+};
 
-      {/* Submit */}
-      <button
-        type="submit"
-        className="btn-primary w-full flex items-center justify-center gap-2"
-      >
-        <FiSend /> Envoyer le message
-      </button>
-    </motion.form>
-  )
-}
+export default ContactForm;
