@@ -3,42 +3,39 @@ import Head from "next/head";
 export default function Skills() {
   const skills = {
     nlp: [
-      "BERT, XLM-RoBERTa, Transformers",
-      "SpaCy, NLTK, SPPAS",
-      "NER, génération de texte",
-      "Embeddings, recherche sémantique",
+        "Transformers (BERT, XLM-RoBERTa)",
+        "SpaCy, NLTK, SPPAS",
+        "Named Entity Recognition (NER)",
+        "Génération de texte",
+        "Embeddings & recherche sémantique",
     ],
     ml: [
-      "Scikit-learn, PyTorch, TensorFlow",
-      "Fine-tuning, Continued Pretraining",
-      "Contrastive Learning",
-      "Optuna (optimisation hyperparamètres)",
+        "PyTorch, TensorFlow, Scikit-learn",
+        "Fine-tuning de modèles",
+        "Continued Pretraining",
+        "Contrastive Learning",
+        "Optimisation (Optuna)",
+        "MLflow (suivi d'expérimentations)",
     ],
     dev: [
-      "Python (expert)",
-      "Git, Bash",
-      "FastAPI, Flask",
-      "Docker",
-      "C# (notion), C++ (notion)",
+        "Python (intermédiaire)", // Bon d'être honnête
+        "Git, Bash",
+        "FastAPI, Flask",
+        "Docker",
+        "C#, C++ (notions)",
     ],
-    cloud: [
-      "Databricks",
-      "MLflow",
-      "PySpark",
-      "OpenSearch",
+    dataProcessing: [ // Nouveau nom plus clair
+        "Pandas, NumPy",
+        "PySpark",
+        "Traitement audio (Praat, WebRTC-VAD, Whisper)",
+        "Feature engineering (TF-IDF, PCA)",
+        "Visualisation (Plotly, dashboards interactifs)",
     ],
-    data: [
-      "Pandas, NumPy",
-      "TF-IDF, PCA",
-      "Praat, WebRTC-VAD",
-      "Whisper",
+    infrastructure: [
+        "Databricks",
+        "OpenSearch",
     ],
-    viz: [
-      "Plotly",
-      "Rapports interactifs HTML",
-      "Dashboards",
-    ],
-  };
+    };
 
   return (
     <>
