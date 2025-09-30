@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className="footer-socials">
           <a
-            href="https://www.linkedin.com/in/nicolas-joué-246569204/"
+            href="https://www.linkedin.com/in/perrine-quennehen"
             target="_blank"
             rel="noopener noreferrer"
           >
