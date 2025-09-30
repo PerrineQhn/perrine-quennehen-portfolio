@@ -100,23 +100,24 @@ export default function Skills() {
 
             {/* Cloud */}
             <div className="skills-section" id="langages-outils">
-              <h3>Cloud & Infrastructure</h3>
-              <ul className="skills-list-inline">
-                {skills.cloud.map((skill, idx) => (
-                  <li key={idx}>
-                    <span>{skill}</span>
-                  </li>
-                ))}
-              </ul>
+                <h3>Cloud & Infrastructure</h3>
+                <ul className="skills-list-inline">
+                    {skills.infrastructure.map((skill, idx) => (
+                    <li key={idx}>
+                        <span>{skill}</span>
+                    </li>
+                    ))}
+                </ul>
 
-              <h4>Traitement de Données</h4>
-              <ul className="skills-list-inline">
-                {skills.data.map((skill, idx) => (
-                  <li key={idx}>
-                    <span>{skill}</span>
-                  </li>
-                ))}
-              </ul>
+                <h4>Traitement de Données</h4>
+                <ul className="skills-list-inline">
+                    {skills.dataProcessing.map((skill, idx) => (
+                    <li key={idx}>
+                        <span>{skill}</span>
+                    </li>
+                    ))}
+                </ul>
+                </div>
 
               <h4>Visualisation</h4>
               <ul className="skills-list-inline">
