@@ -1,9 +1,48 @@
 import Link from "next/link";
 
 export const projets = [
+    {
+    id: "finetuning-semantic-search",
+    type: "exp", 
+    yearInfo: "2025",
+    titre: "Fine-tuning de Modèles & Recherche Sémantique - Bouygues Construction",
+    techno: "BERT, XLM-RoBERTa, FAISS, Python",
+    desc: "Développement d'un système de recherche sémantique utilisant des modèles transformers fine-tunés pour améliorer la précision de la recherche dans des corpus multilingues.",
+    extra: "Fine-tuning de modèles BERT/XLM-RoBERTa sur des données spécifiques au domaine. Implémentation d'un système de recherche par similarité vectorielle avec FAISS. Optimisation des hyperparamètres pour améliorer les performances.",
+    tags: [
+      "BERT",
+      "XLM-RoBERTa",
+      "Fine-tuning",
+      "FAISS",
+      "Recherche sémantique",
+      "Embeddings",
+      "PyTorch",
+      "Python"
+    ],
+    // Pas de lien si pas de repo
+  },
   {
-    id: 1,
+    id: "sentiment-analysis-stage",
     type: "exp",
+    yearInfo: "2025", // Période du stage
+    titre: "Analyse des Sentiments - Bouygues Construction",
+    techno: "Transformers, CamemBERT, Python, NLP",
+    desc: "Développement d'un système d'analyse des sentiments pour traiter automatiquement les retours clients et documents internes dans le secteur de la construction.",
+    extra: "Fine-tuning de CamemBERT pour l'analyse de sentiment en français. Traitement de données textuelles du domaine de la construction. Classification multi-classes avec métriques de performance détaillées. Intégration dans un pipeline de production.",
+    tags: [
+      "Analyse des sentiments",
+      "CamemBERT",
+      "Transformers",
+      "Classification",
+      "NLP",
+      "Python",
+      "Fine-tuning",
+      "Production"
+    ],
+  },
+  {
+    id: "Survey-Topic-Analysis",
+    type: "perso",
     titre: "Survey Topic Analysis",
     techno: "Python, Pandas, spaCy, scikit-learn, TF-IDF, PCA, Plotly",
     yearInfo: "2024",
@@ -14,7 +53,7 @@ export const projets = [
     tags: ["Python", "Pandas", "spaCy", "scikit-learn", "NLP", "Data Science", "Plotly"],
   },
   {
-    id: 2,
+    id: "Model-T9-to-Sinogram",
     type: "acad",
     titre: "Model T9 to Sinogram",
     techno: "Python, NLP, Machine Learning",
@@ -26,7 +65,7 @@ export const projets = [
     tags: ["Python", "NLP", "Machine Learning", "Chinese NLP"],
   },
   {
-    id: 3,
+    id: "ChatBot-FastAPI",
     type: "perso",
     titre: "ChatBot FastAPI",
     techno: "Python, FastAPI, NLP",
@@ -38,7 +77,7 @@ export const projets = [
     tags: ["Python", "FastAPI", "NLP", "API Development"],
   },
   {
-    id: 4,
+    id: "Chinese-OCR",
     type: "acad",
     titre: "Chinese OCR",
     techno: "Python, Computer Vision, Deep Learning",
@@ -50,7 +89,7 @@ export const projets = [
     tags: ["Python", "Computer Vision", "Deep Learning", "Chinese NLP"],
   },
   {
-    id: 5,
+    id: "MTdVTranslator",
     type: "acad",
     titre: "MTdV Translator",
     techno: "Python, Machine Translation, NLP",
@@ -74,7 +113,7 @@ export const projets = [
     tags: ["C#", ".NET", "Desktop App"],
   },
   {
-    id: 7,
+    id: "Voice-Synthesizer",
     type: "acad",
     titre: "Voice Synthesizer",
     techno: "Python, Speech Processing",
@@ -86,7 +125,7 @@ export const projets = [
     tags: ["Python", "Speech Processing", "Signal Processing"],
   },
   {
-    id: 8,
+    id: "opennmt-translation",
     type: "acad",
     titre: "OpenNMT Translation",
     techno: "Python, OpenNMT, Neural Machine Translation",
@@ -97,6 +136,7 @@ export const projets = [
     lienLabel: "Voir sur GitHub",
     tags: ["Python", "OpenNMT", "Neural Machine Translation"],
   },
+  
 ];
 
 export const timeline = [

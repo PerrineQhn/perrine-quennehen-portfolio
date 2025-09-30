@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -66,7 +67,16 @@ export default function Home() {
                       </div>
                     </div>
                     <p>
-                      Ingénieure ML chez <strong>Bouygues Construction</strong>
+                    Ingénieure ML chez <strong>Bouygues Construction</strong>
+                    <span style={{ marginLeft: 8 }}>
+                        <Image
+                        src="/LogoBouygues.png"
+                        alt="Bouygues Construction"
+                        width={32}
+                        height={32}
+                        style={{ verticalAlign: "middle" }}
+                        />
+                    </span>
                     </p>
                   </div>
                 </div>
@@ -91,7 +101,7 @@ export default function Home() {
                 <div className={styles.cardContent}>
                   <h3>Objectif</h3>
                   <p>
-                    En recherche active d'un <strong>CDI en IA / Data Science</strong> pour 
+                    En recherche active d'un <strong>CDI en IA / Machine Learning / Data Science NLP</strong> pour 
                     Décembre 2025.
                   </p>
                 </div>

@@ -24,15 +24,18 @@ export default function Header() {
           className="profile-pic"
           priority
         />
+        <div className="language-badge">
+            🌍 FR • EN • 中文
+        </div>
         <div className="header-info">
           <div className="header-top-row">
             <div className="header-title-container">
-              <h1>Nicolas Joué</h1>
-              <p className="header-subtitle">Ingénieur en IA & Data Science</p>
+              <h1>Perrine Quennehen</h1>
+              <p className="header-subtitle">Ingénieure en IA, Machine Learning & Data Science NLP</p>
             </div>
             <Link href="/contact" className="job-status-badge">
               <span className="glowing-dot"></span>
-              Disponible pour un CDI - Oct. 2025
+              Disponible pour un CDI - Déc. 2025
             </Link>
           </div>
 
