@@ -125,7 +125,7 @@ export default function Header() {
           title="Mes projets sur GitHub"
         >
           <Image
-            src="/github-mark.png"
+            src="/github-mark-white.png"
             alt="GitHub"
             width={30}
             height={30}

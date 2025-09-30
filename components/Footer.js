@@ -33,7 +33,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/github-mark.png"
+              src="/github-mark-white.png"
               alt="GitHub"
               width={24}
               height={24}
