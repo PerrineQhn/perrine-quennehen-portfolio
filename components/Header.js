@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiMenu, FiX, FiDownload } from 'react-icons/fi'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,77 +16,85 @@ export default function Header() {
   ]
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="container-custom flex items-center justify-between py-4">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-primary">
-          PQ
-        </Link>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+      <nav className="container-custom">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg transition-transform group-hover:scale-110">
+              PQ
+            </div>
+            <span className="hidden sm:block font-semibold text-gray-900">Perrine Q.</span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
-            <li key={item.name}>
-              <Link 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
                 href={item.path}
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-all"
               >
                 {item.name}
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
 
-        {/* CTA Button */}
-        <a 
-          href="/cv/CV_Perrine_Quennehen.pdf" 
-          download
-          className="hidden md:block btn-primary"
-        >
-          Télécharger CV
-        </a>
+          {/* CTA Button Desktop */}
+          <a
+            href="/cv/CV_Perrine_Quennehen.pdf"
+            download
+            className="hidden md:flex items-center space-x-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all hover:shadow-lg font-medium"
+          >
+            <FiDownload size={18} />
+            <span>CV</span>
+          </a>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <FiX /> : <FiMenu />}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white border-t"
-        >
-          <ul className="flex flex-col space-y-4 p-4">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <Link 
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden border-t border-gray-200 bg-white"
+          >
+            <div className="container-custom py-4 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className="block text-gray-700 hover:text-primary transition-colors"
+                  className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
                 >
                   {item.name}
                 </Link>
-              </li>
-            ))}
-            <li>
-              <a 
-                href="/cv/CV_Perrine_Quennehen.pdf" 
+              ))}
+              <a
+                href="/cv/CV_Perrine_Quennehen.pdf"
                 download
-                className="btn-primary block text-center"
+                className="flex items-center justify-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium mt-2"
               >
-                Télécharger CV
+                <FiDownload size={18} />
+                <span>Télécharger CV</span>
               </a>
-            </li>
-          </ul>
-        </motion.div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
