@@ -119,16 +119,6 @@ export default function Skills() {
                 </ul>
                 </div>
 
-              <h4>Visualisation</h4>
-              <ul className="skills-list-inline">
-                {skills.viz.map((skill, idx) => (
-                  <li key={idx}>
-                    <span>{skill}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Soft Skills */}
             <div className="skills-section" id="soft-skills">
               <h3>Compétences Transversales</h3>
