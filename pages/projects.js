@@ -114,7 +114,10 @@ export default function Projects() {
 
                 <div className="card-details">
                   <p>{projet.desc}</p>
-                  {projet.extra && <p>{projet.extra}</p>}
+                  {/* ✅ MODIFICATION ICI : Support HTML dans extra */}
+                  {projet.extra && (
+                    <div dangerouslySetInnerHTML={{ __html: projet.extra }} />
+                  )}
                   {projet.tags && projet.tags.length > 0 && (
                     <p>
                       <strong>Technologies :</strong> {projet.tags.join(", ")}
@@ -122,7 +125,7 @@ export default function Projects() {
                   )}
                   {projet.lien && (
                     <p>
-                      <a
+                      
                         href={projet.lien}
                         target="_blank"
                         rel="noopener noreferrer"
