@@ -124,7 +124,7 @@ export default function Projects() {
                   )}
                   {projet.lien && (
                     <p>
-                      
+                      <a
                         href={projet.lien}
                         target="_blank"
                         rel="noopener noreferrer"
