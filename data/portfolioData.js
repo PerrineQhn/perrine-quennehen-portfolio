@@ -7,15 +7,30 @@ export const projets = [
     yearInfo: "2025",
     titre: "Plateforme de Domain Adaptation Multi-Mode pour Modèles Transformers - Domaine BTP",
     techno: "XLM-RoBERTa, Contrastive Learning, TSDAE, MLflow, Databricks",
-    desc: "Développement d'une plateforme complète de continued pretraining pour adapter des modèles de langage au domaine technique du BTP, avec support multilingue (FR/EN) et génération d'embeddings denses pour recherche sémantique downstream.",
-    extra: "4 stratégies d'adaptation : MLM (masquage prioritaire), Contrastive (SimCSE + Triplet Loss), TSDAE (denoising), Unified (séquentiel). Hard negative mining cross-lingue avec filtrage PMI. Optimisations GPU : layer freezing, gradient checkpointing, recherche HPO (Optuna + re-ranking). Échantillonnage équilibré par 50+ catégories hiérarchiques. API REST (FastAPI) pour entraînements asynchrones avec monitoring MLflow. Pipeline Databricks (10M+ documents). Résultats : -60% temps entraînement, support corpus 10M+, OOM-safe GPU T4/V100.",
+    desc: "Développement d'une plateforme complète de continued pretraining pour adapter des modèles de langage (XLM-RoBERTa) au domaine technique du BTP, avec support multilingue (FR/EN) et génération d'embeddings denses optimisés pour recherche sémantique downstream.",
+    extra: `**Techniques d'Adaptation :**
+- 4 modes d'entraînement : MLM (masquage prioritaire), Contrastive (SimCSE + Triplet Loss), TSDAE (denoising), Unified (séquentiel)
+- Hard negative mining cross-lingue (FR↔EN) avec filtrage PMI anti-faux-négatifs
+- Échantillonnage équilibré par 50+ catégories hiérarchiques avec redistribution optimisée
+
+**Optimisations & Infrastructure :**
+- Optimisations GPU : layer freezing (8/12 couches), gradient checkpointing, gestion OOM-safe
+- Recherche hyperparamètres : Optuna (50+ trials) + re-ranking top-k sur conditions finales
+- API REST (FastAPI) pour entraînements asynchrones + monitoring MLflow temps réel
+- Pipeline Databricks : extraction, filtrage et processing de corpus 10M+ documents
+
+**Résultats :**
+- -60% temps d'entraînement via optimisations mémoire
+- Support corpus jusqu'à 10M de documents avec reproducibilité garantie
+- Entraînements OOM-safe sur GPUs T4/V100
+- 70%+ de triplets cross-lingues générés`,
     tags: [
         "XLM-RoBERTa", "Contrastive Learning", "SimCSE", "Triplet Loss", 
         "TSDAE", "PyTorch", "Sentence-Transformers", "Optuna", "MLflow", 
         "Databricks", "Unity Catalog", "FastAPI", "Domain Adaptation", 
-        "Hard Negative Mining", "Layer Freezing", "Python"
+        "Hard Negative Mining", "Python"
     ],
-  },
+},
   {
     id: "sentiment-analysis-stage",
     type: "exp",
