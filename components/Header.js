@@ -85,7 +85,7 @@ export default function Header() {
 
       <div className="header-right">
         <a
-          href="/CV - Perrine Quennehen.pdf"
+          href="/CV - Perrine Quennehen - Data Scientist NLP Ingenieure ML.pdf"
           download="CV_Perrine_Quennehen.pdf"
           className="cv-button"
           title="Télécharger mon CV"
