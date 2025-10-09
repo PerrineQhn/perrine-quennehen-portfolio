@@ -8,13 +8,13 @@ export const projets = [
     titre: "Plateforme de Domain Adaptation Multi-Mode pour Modèles Transformers - Domaine BTP",
     techno: "XLM-RoBERTa, Contrastive Learning, TSDAE, MLflow, Databricks",
     desc: "Développement d'une plateforme complète de continued pretraining pour adapter des modèles de langage (XLM-RoBERTa) au domaine technique du BTP, avec support multilingue (FR/EN) et génération d'embeddings denses optimisés pour recherche sémantique downstream.",
-    extra: "TECHNIQUES : 4 modes d'entraînement (MLM avec masquage prioritaire, Contrastive avec SimCSE + Triplet Loss, TSDAE avec denoising, Unified séquentiel) | Hard negative mining cross-lingue FR-EN avec filtrage PMI | Échantillonnage équilibré sur 50+ catégories hiérarchiques. OPTIMISATIONS : Layer freezing (8/12 couches), gradient checkpointing, OOM-safe GPU T4/V100 | Recherche HPO via Optuna (50+ trials) avec re-ranking top-k | Réduction de 60% du temps d'entraînement. INFRASTRUCTURE : API REST (FastAPI) pour entraînements asynchrones | Monitoring MLflow temps réel + Unity Catalog | Pipeline Databricks (10M+ documents). RÉSULTATS : Support corpus 10M+, 70%+ triplets cross-lingues générés, reproducibilité garantie.",
+    extra: "4 modes d'adaptation (MLM masquage prioritaire, Contrastive SimCSE+Triplet Loss, TSDAE denoising, Unified séquentiel) | Hard negative mining cross-lingue FR-EN avec filtrage PMI | Échantillonnage équilibré 50+ catégories | Layer freezing (8/12 couches), gradient checkpointing, OOM-safe GPU | HPO Optuna (50+ trials) + re-ranking | API REST (FastAPI) + monitoring MLflow + Unity Catalog | Pipeline Databricks 10M+ docs | Résultats : -60% temps, 70%+ triplets cross-lingues.",
     tags: [
         "XLM-RoBERTa", "Contrastive Learning", "SimCSE", "Triplet Loss", 
         "TSDAE", "PyTorch", "Sentence-Transformers", "Optuna", "MLflow", 
         "Databricks", "Unity Catalog", "FastAPI", "Domain Adaptation", "Python"
     ],
-},
+  },
   {
     id: "sentiment-analysis-stage",
     type: "exp",
