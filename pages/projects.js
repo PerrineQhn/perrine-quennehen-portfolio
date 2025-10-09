@@ -114,7 +114,6 @@ export default function Projects() {
 
                 <div className="card-details">
                   <p>{projet.desc}</p>
-                  {/* ✅ MODIFICATION ICI : Support HTML dans extra */}
                   {projet.extra && (
                     <div dangerouslySetInnerHTML={{ __html: projet.extra }} />
                   )}
