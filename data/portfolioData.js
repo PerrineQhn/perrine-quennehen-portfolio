@@ -8,27 +8,11 @@ export const projets = [
     titre: "Plateforme de Domain Adaptation Multi-Mode pour Modèles Transformers - Domaine BTP",
     techno: "XLM-RoBERTa, Contrastive Learning, TSDAE, MLflow, Databricks",
     desc: "Développement d'une plateforme complète de continued pretraining pour adapter des modèles de langage (XLM-RoBERTa) au domaine technique du BTP, avec support multilingue (FR/EN) et génération d'embeddings denses optimisés pour recherche sémantique downstream.",
-    extra: `**Techniques d'Adaptation :**
-- 4 modes d'entraînement : MLM (masquage prioritaire), Contrastive (SimCSE + Triplet Loss), TSDAE (denoising), Unified (séquentiel)
-- Hard negative mining cross-lingue (FR↔EN) avec filtrage PMI anti-faux-négatifs
-- Échantillonnage équilibré par 50+ catégories hiérarchiques avec redistribution optimisée
-
-**Optimisations & Infrastructure :**
-- Optimisations GPU : layer freezing (8/12 couches), gradient checkpointing, gestion OOM-safe
-- Recherche hyperparamètres : Optuna (50+ trials) + re-ranking top-k sur conditions finales
-- API REST (FastAPI) pour entraînements asynchrones + monitoring MLflow temps réel
-- Pipeline Databricks : extraction, filtrage et processing de corpus 10M+ documents
-
-**Résultats :**
-- -60% temps d'entraînement via optimisations mémoire
-- Support corpus jusqu'à 10M de documents avec reproducibilité garantie
-- Entraînements OOM-safe sur GPUs T4/V100
-- 70%+ de triplets cross-lingues générés`,
+    extra: "TECHNIQUES : 4 modes d'entraînement (MLM avec masquage prioritaire, Contrastive avec SimCSE + Triplet Loss, TSDAE avec denoising, Unified séquentiel) | Hard negative mining cross-lingue FR-EN avec filtrage PMI | Échantillonnage équilibré sur 50+ catégories hiérarchiques. OPTIMISATIONS : Layer freezing (8/12 couches), gradient checkpointing, OOM-safe GPU T4/V100 | Recherche HPO via Optuna (50+ trials) avec re-ranking top-k | Réduction de 60% du temps d'entraînement. INFRASTRUCTURE : API REST (FastAPI) pour entraînements asynchrones | Monitoring MLflow temps réel + Unity Catalog | Pipeline Databricks (10M+ documents). RÉSULTATS : Support corpus 10M+, 70%+ triplets cross-lingues générés, reproducibilité garantie.",
     tags: [
         "XLM-RoBERTa", "Contrastive Learning", "SimCSE", "Triplet Loss", 
         "TSDAE", "PyTorch", "Sentence-Transformers", "Optuna", "MLflow", 
-        "Databricks", "Unity Catalog", "FastAPI", "Domain Adaptation", 
-        "Hard Negative Mining", "Python"
+        "Databricks", "Unity Catalog", "FastAPI", "Domain Adaptation", "Python"
     ],
 },
   {
@@ -49,18 +33,6 @@ export const projets = [
       "Fine-tuning",
       "Production"
     ],
-  },
-  {
-    id: "Survey-Topic-Analysis",
-    type: "perso",
-    titre: "Survey Topic Analysis",
-    techno: "Python, Pandas, spaCy, scikit-learn, TF-IDF, PCA, Plotly",
-    yearInfo: "2024",
-    desc: "Analyse NLP d'enquêtes clients dans le secteur de la construction. Extraction de thèmes et visualisation interactive des verbatims.",
-    extra: "Projet développé chez Bouygues Construction pour analyser les réponses ouvertes d'enquêtes de satisfaction clients. Structuration par thèmes avec TF-IDF, détection d'outliers par ACP, et génération de rapports interactifs permettant une analyse efficace des retours clients.",
-    lien: "https://github.com/PerrineQhn/survey-topic-analysis",
-    lienLabel: "Voir sur GitHub",
-    tags: ["Python", "Pandas", "spaCy", "scikit-learn", "NLP", "Data Science", "Plotly"],
   },
   {
     id: "Model-T9-to-Sinogram",
