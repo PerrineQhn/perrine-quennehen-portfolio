@@ -2,24 +2,19 @@ import Link from "next/link";
 
 export const projets = [
     {
-    id: "finetuning-semantic-search",
+    id: "domain-adaptation-btp",
     type: "exp", 
     yearInfo: "2025",
-    titre: "Fine-tuning de Modèles & Recherche Sémantique - Bouygues Construction",
-    techno: "BERT, XLM-RoBERTa, FAISS, Python",
-    desc: "Développement d'un système de recherche sémantique utilisant des modèles transformers fine-tunés pour améliorer la précision de la recherche dans des corpus multilingues.",
-    extra: "Fine-tuning de modèles BERT/XLM-RoBERTa sur des données spécifiques au domaine. Implémentation d'un système de recherche par similarité vectorielle avec FAISS. Optimisation des hyperparamètres pour améliorer les performances.",
+    titre: "Plateforme de Domain Adaptation Multi-Mode pour Modèles Transformers - Domaine BTP",
+    techno: "XLM-RoBERTa, Contrastive Learning, TSDAE, MLflow, Databricks",
+    desc: "Développement d'une plateforme complète de continued pretraining pour adapter des modèles de langage au domaine technique du BTP, avec support multilingue (FR/EN) et génération d'embeddings denses pour recherche sémantique downstream.",
+    extra: "4 stratégies d'adaptation : MLM (masquage prioritaire), Contrastive (SimCSE + Triplet Loss), TSDAE (denoising), Unified (séquentiel). Hard negative mining cross-lingue avec filtrage PMI. Optimisations GPU : layer freezing, gradient checkpointing, recherche HPO (Optuna + re-ranking). Échantillonnage équilibré par 50+ catégories hiérarchiques. API REST (FastAPI) pour entraînements asynchrones avec monitoring MLflow. Pipeline Databricks (10M+ documents). Résultats : -60% temps entraînement, support corpus 10M+, OOM-safe GPU T4/V100.",
     tags: [
-      "BERT",
-      "XLM-RoBERTa",
-      "Fine-tuning",
-      "FAISS",
-      "Recherche sémantique",
-      "Embeddings",
-      "PyTorch",
-      "Python"
+        "XLM-RoBERTa", "Contrastive Learning", "SimCSE", "Triplet Loss", 
+        "TSDAE", "PyTorch", "Sentence-Transformers", "Optuna", "MLflow", 
+        "Databricks", "Unity Catalog", "FastAPI", "Domain Adaptation", 
+        "Hard Negative Mining", "Layer Freezing", "Python"
     ],
-    // Pas de lien si pas de repo
   },
   {
     id: "sentiment-analysis-stage",
