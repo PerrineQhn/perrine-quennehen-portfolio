@@ -24,7 +24,7 @@ export default function Home() {
               Ingénieure Machine Learning | Data Scientist NLP
             </p>
             <p className={styles.heroTagline}>
-              En dernière année de Master en Traitement Automatique du Langage à l’INALCO, je réalise actuellement mon stage de fin d’études au LabTP de Bouygues Construction, où je travaille sur l’adaptation de modèles de langage (XLM-RoBERTa) au domaine du BTP. <br>
+              En dernière année de Master en Traitement Automatique du Langage à l’INALCO, je réalise actuellement mon stage de fin d’études au LabTP de Bouygues Construction, où je travaille sur l’adaptation de modèles de langage (XLM-RoBERTa) au domaine du BTP. </br>
 Mon travail porte sur le fine-tuning de modèles Transformers, le pré-entraînement sur corpus métier et l’optimisation expérimentale avec Optuna, Databricks et MLflow, jusqu’à la mise en production sur OpenSearch.
 Ce projet, à la croisée de la recherche NLP et de l’industrialisation de l’IA, m’a permis de développer une approche rigoureuse et appliquée du machine learning.
 Je souhaite aujourd’hui mettre mes compétences en Python, NLP et Machine Learning au service de projets concrets en IA appliquée au langage, où innovation technologique et besoins du terrain se rejoignent.
