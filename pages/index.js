@@ -24,10 +24,28 @@ export default function Home() {
               Ingénieure Machine Learning | Data Scientist NLP
             </p>
             <p className={styles.heroTagline}>
-              En dernière année de Master en Traitement Automatique du Langage à l’INALCO, je réalise actuellement mon stage de fin d’études au LabTP de Bouygues Construction, où je travaille sur l’adaptation de modèles de langage (XLM-RoBERTa) au domaine du BTP. </br>
-Mon travail porte sur le fine-tuning de modèles Transformers, le pré-entraînement sur corpus métier et l’optimisation expérimentale avec Optuna, Databricks et MLflow, jusqu’à la mise en production sur OpenSearch.
-Ce projet, à la croisée de la recherche NLP et de l’industrialisation de l’IA, m’a permis de développer une approche rigoureuse et appliquée du machine learning.
-Je souhaite aujourd’hui mettre mes compétences en Python, NLP et Machine Learning au service de projets concrets en IA appliquée au langage, où innovation technologique et besoins du terrain se rejoignent.
+              En dernière année de Master en <strong>Traitement Automatique du Langage</strong> à l’INALCO, 
+              je réalise actuellement mon stage de fin d’études au <strong>LabTP de Bouygues Construction</strong>, 
+              où je travaille sur l’adaptation de <strong>modèles de langage (XLM-RoBERTa)</strong> au domaine du BTP.
+            </p>
+            
+            <p className={styles.heroTagline}>
+              Mon travail porte sur le <strong>fine-tuning de modèles Transformers</strong>, 
+              le <strong>pré-entraînement sur corpus métier</strong> et l’<strong>optimisation expérimentale</strong> 
+              avec <strong>Optuna</strong>, <strong>Databricks</strong> et <strong>MLflow</strong>, 
+              jusqu’à la mise en production sur <strong>OpenSearch</strong>.
+            </p>
+            
+            <p className={styles.heroTagline}>
+              Ce projet, à la croisée de la <strong>recherche NLP</strong> et de l’<strong>industrialisation de l’IA</strong>, 
+              m’a permis de développer une approche rigoureuse et appliquée du machine learning.
+            </p>
+            
+            <p className={styles.heroTagline}>
+              Je souhaite aujourd’hui mettre mes compétences en <strong>Python</strong>, <strong>NLP</strong> 
+              et <strong>Machine Learning</strong> au service de projets concrets en 
+              <strong>IA appliquée au langage</strong>, où <strong>innovation technologique</strong> 
+              et <strong>besoins du terrain</strong> se rejoignent.
             </p>
             <div className={styles.ctaButtons}>
               <Link href="/projects" className="cta-button primary">
