@@ -35,7 +35,7 @@ export default function Header() {
             </div>
             <Link href="/contact" className="job-status-badge">
               <span className="glowing-dot"></span>
-              Disponible pour un CDI - Déc. 2025
+              Disponible pour un CDI - Jan. 2026
             </Link>
           </div>
 
