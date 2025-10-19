@@ -103,7 +103,7 @@ Je souhaite aujourd’hui mettre mes compétences en Python, NLP et Machine Lear
                   <h3>Objectif</h3>
                   <p>
                     Contribuer au développement de solutions d’intelligence artificielle utiles, performantes et ancrées dans la réalité des usages.
-                    En recherche active d'un <strong>CDI en IA / Machine Learning / Data Science NLP<strong> pour début 2026.
+                    En recherche active d'un <strong>CDI en IA / Machine Learning / Data Science NLP</strong> pour début 2026.
                   </p>
                 </div>
               </div>
